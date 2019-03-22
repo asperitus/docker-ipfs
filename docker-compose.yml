@@ -1,0 +1,15 @@
+#
+version: '3.6'
+
+services:
+  ipfs:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: asperitus/ipfs:latest
+    container_name: ipfs
+    environment:
+      - HOST_USER=$USER
+    volumes:
+      - $HOME:/host
+    restart: always
