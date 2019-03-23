@@ -6,6 +6,11 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+      args:
+        - http_proxy=${http_proxy}
+        - https_proxy=${https_proxy}
+        - HTTP_PROXY=${HTTP_PROXY}
+        - HTTPS_PROXY=${HTTPS_PROXY}
     image: asperitus/ipfs:latest
     container_name: ipfs
     environment:

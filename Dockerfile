@@ -15,5 +15,5 @@ WORKDIR /
 
 ENV SHUTDOWN_HOOK "\$HOME/.asperitus/ipfs/rc.sh stop"
 
-CMD ["/bin/sh", "-ecx", "uname -a && mkdir -p ${HOME}/.asperitus && rm -rf ${HOME}/.asperitus/ipfs && docker cp ipfs:/dist/$(uname -s) ${HOME}/.asperitus/ipfs && ${HOME}/.asperitus/ipfs/rc.sh start"]
+CMD ["/bin/sh", "-ecx", "uname -a && env && export PATH=/usr/local/bin:$PATH && mkdir -p ${HOME}/.asperitus && rm -rf ${HOME}/.asperitus/ipfs && docker cp ipfs:/dist/$(uname -s) ${HOME}/.asperitus/ipfs && ${HOME}/.asperitus/ipfs/rc.sh start"]
 ##

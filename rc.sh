@@ -33,7 +33,7 @@ function stop_ipfs {
 }
 
 ##
-export PATH=$PWD/go-ipfs:$PATH
+export PATH=${HOME}/.asperitus/ipfs/go-ipfs:$PATH
 export IPFS_PATH="${HOME}/.ipfs-m3"
 
 case "$1" in 
